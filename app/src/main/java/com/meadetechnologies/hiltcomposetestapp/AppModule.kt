@@ -3,8 +3,8 @@ package com.meadetechnologies.hiltcomposetestapp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -13,7 +13,15 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun someRandomString() : String {
+    @Named("someRandomString")
+    fun someRandomString(): String {
         return "aodfhgo"
+    }
+
+    @Singleton
+    @Provides
+    @Named("someRandomString2")
+    fun someRandomString2(): String {
+        return "aodfhgo2"
     }
 }

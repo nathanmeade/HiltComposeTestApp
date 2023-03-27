@@ -13,12 +13,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.meadetechnologies.hiltcomposetestapp.ui.theme.HiltComposeTestAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import javax.inject.Named
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var stringVariable : String
+    @Named("someRandomString2")
+    lateinit var stringVariable: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
